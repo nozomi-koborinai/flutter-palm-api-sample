@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:palm_sample/application/usecase/summary_usecase.dart';
+import 'package:palm_sample/presentation/presentation_mixin.dart';
+
+import '../../application/state/summary_text_provider.dart';
 
 /// 要約生成ページ
-class SummaryPage extends ConsumerWidget {
+class SummaryPage extends ConsumerWidget with PresentationMixin {
   SummaryPage({Key? key}) : super(key: key);
 
   final TextEditingController _textEditingController = TextEditingController();
@@ -37,13 +41,21 @@ class SummaryPage extends ConsumerWidget {
               ),
               const SizedBox(height: 32.0),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  execute(
+                    context,
+                    action: () => ref
+                        .read(summaryUsecaseProvider)
+                        .summarizeText(targetText: _textEditingController.text),
+                    successMessage: '要約が完了しました',
+                  );
+                },
                 style: ButtonStyle(elevation: MaterialStateProperty.all(8.0)),
                 child: const Text('Summarize'),
               ),
               const SizedBox(height: 48.0),
-              const Text(
-                'Summary  : ',
+              Text(
+                'Summary  : ${ref.watch(summaryTextStateProvider)}',
               ),
             ],
           ),
