@@ -4,7 +4,7 @@ import 'package:palm_sample/presentation/theme.dart';
 
 import '../application/state/overlay_loading_provider.dart';
 import 'components/loading.dart';
-import 'pages/home_page.dart';
+import 'pages/summary_page.dart';
 
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class App extends ConsumerWidget {
       title: 'Summarize Text with PaLM API',
       debugShowCheckedModeBanner: false,
       theme: ref.read(themeProvider),
-      home: const HomePage(),
+      home: SummaryPage(),
       builder: (context, child) {
         return Consumer(
           builder: (context, ref, _) {
