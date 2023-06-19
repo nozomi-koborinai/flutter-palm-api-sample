@@ -1,4 +1,4 @@
-import 'package:palm_sample/domain/summary/summary_repository.dart';
+import '../domain/text/summary_repository.dart';
 
 class MockSummaryRepository implements SummaryRepository {
   @override
