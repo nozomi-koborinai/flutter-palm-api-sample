@@ -23,7 +23,9 @@ class SummaryUsecase {
       final summaryText = await ref
           .read(textRepositoryProvider)
           .summarizeText(text: Text(id: '', text: text, summary: ''));
-      ref.watch(summaryTextStateProvider.notifier).update((_) => summaryText);
+      ref
+          .watch(summaryTextStateProvider.notifier)
+          .update((_) => summaryText.summary);
     } catch (e) {
       rethrow;
     } finally {

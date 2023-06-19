@@ -55,7 +55,7 @@ class SummaryPage extends ConsumerWidget with PresentationMixin {
               ),
               const SizedBox(height: 48.0),
               Text(
-                'Summary  : ${ref.watch(summaryTextStateProvider.notifier).state.summary}',
+                'Summary  : ${ref.watch(summaryTextStateProvider)}',
               ),
             ],
           ),

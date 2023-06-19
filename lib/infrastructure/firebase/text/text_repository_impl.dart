@@ -30,12 +30,12 @@ class TextRepositoryImpl implements TextRepository {
       final doc = await collectionRef.add(
         TextDocument(status: {}, text: text.text, summary: ''),
       );
-      final snapshot = await doc.snapshots().first;
-      final summaryText = snapshot.data()!;
+      await Future.delayed(const Duration(seconds: 3));
+      final summaryText = await collectionRef.doc(doc.id).get();
       return Text(
         id: doc.id,
-        text: summaryText.text,
-        summary: summaryText.summary,
+        text: summaryText.data()?.text ?? '',
+        summary: summaryText.data()?.summary ?? '',
       );
     } on FirebaseException catch (e) {
       throw ('Firestore の追加処理でエラーが発生しました: ${e.code}');
