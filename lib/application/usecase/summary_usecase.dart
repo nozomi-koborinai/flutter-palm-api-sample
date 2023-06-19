@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:palm_sample/application/state/summary_text_provider.dart';
 
-import '../../domain/text/summary_repository.dart';
+import '../../domain/text/text_repository.dart';
 import '../state/overlay_loading_provider.dart';
 
 /// 要約ユースケースプロバイダー

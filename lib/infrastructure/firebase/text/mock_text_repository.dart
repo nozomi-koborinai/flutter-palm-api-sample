@@ -1,6 +1,6 @@
-import '../domain/text/summary_repository.dart';
+import '../../../domain/text/text_repository.dart';
 
-class MockSummaryRepository implements SummaryRepository {
+class MockTextRepository implements TextRepository {
   @override
   Future<String> summarizeText({required String targetText}) async {
     await Future.delayed(const Duration(seconds: 2));
