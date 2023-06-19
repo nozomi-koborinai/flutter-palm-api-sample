@@ -46,7 +46,7 @@ class SummaryPage extends ConsumerWidget with PresentationMixin {
                     context,
                     action: () => ref
                         .read(summaryUsecaseProvider)
-                        .summarizeText(targetText: _textEditingController.text),
+                        .summarizeText(text: _textEditingController.text),
                     successMessage: '要約が完了しました',
                   );
                 },
@@ -55,7 +55,7 @@ class SummaryPage extends ConsumerWidget with PresentationMixin {
               ),
               const SizedBox(height: 48.0),
               Text(
-                'Summary  : ${ref.watch(summaryTextStateProvider)}',
+                'Summary  : ${ref.watch(summaryTextStateProvider.notifier).state.summary}',
               ),
             ],
           ),

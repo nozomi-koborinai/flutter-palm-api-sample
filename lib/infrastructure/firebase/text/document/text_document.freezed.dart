@@ -143,14 +143,14 @@ class _$_TextDocument with DiagnosticableTreeMixin implements _TextDocument {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TextDocument(status: $status, summary: $summary, text: $text)';
+    return 'text_documents(status: $status, summary: $summary, text: $text)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TextDocument'))
+      ..add(DiagnosticsProperty('type', 'text_documents'))
       ..add(DiagnosticsProperty('status', status))
       ..add(DiagnosticsProperty('summary', summary))
       ..add(DiagnosticsProperty('text', text));

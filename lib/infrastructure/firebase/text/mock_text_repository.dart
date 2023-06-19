@@ -1,9 +1,10 @@
+import '../../../domain/text/entity/text.dart';
 import '../../../domain/text/text_repository.dart';
 
 class MockTextRepository implements TextRepository {
   @override
-  Future<String> summarizeText({required String targetText}) async {
+  Future<Text> summarizeText({required Text text}) async {
     await Future.delayed(const Duration(seconds: 2));
-    return '要約後の$targetText';
+    return text.copyWith(summary: '要約後の${text.text}');
   }
 }
