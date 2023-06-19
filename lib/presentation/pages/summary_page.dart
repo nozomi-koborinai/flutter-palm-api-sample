@@ -47,7 +47,7 @@ class SummaryPage extends ConsumerWidget with PresentationMixin {
                     action: () => ref
                         .read(summaryUsecaseProvider)
                         .summarizeText(text: _textEditingController.text),
-                    successMessage: '要約が完了しました',
+                    successMessage: 'Summary is complete!!',
                   );
                 },
                 style: ButtonStyle(elevation: MaterialStateProperty.all(8.0)),
