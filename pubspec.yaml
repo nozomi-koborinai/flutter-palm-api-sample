@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   build_runner: ^2.4.5
+  cloud_firestore: ^4.8.1
   firebase_core: ^2.14.0
   flutter:
     sdk: flutter
